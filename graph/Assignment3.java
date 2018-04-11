@@ -60,6 +60,7 @@ public class Assignment3 {
     
     public static void main(String[] args) throws IOException {
         Charset charset = Charset.forName("Unicode");
+        // Reading relative path to the input file - must be in correct format, otherwise program doesn't handle user errors.
         Path file = Paths.get("input.txt");
         int[][] ee;
         String[] vv;
@@ -73,6 +74,7 @@ public class Assignment3 {
                 String[] line_array = line.split(",");
                 int[] data_array = new int[vv.length];
                 for (int k = 0; k < line_array.length; k++) {
+                    // Not sure if encoding is working properly, it is supposed to be infinity sign.
                     if (line_array[k].equals("âˆž")) {
                         data_array[k] = Integer.MAX_VALUE;
                     } else {
